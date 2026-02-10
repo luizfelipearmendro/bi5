@@ -21,7 +21,7 @@ const Contact = () => {
             {[
               { icon: Mail, label: "E-mail", value: "contato@bi5.com.br" },
               { icon: Phone, label: "Telefone", value: "(11) 99999-0000" },
-              { icon: MapPin, label: "Localização", value: "São Paulo, SP" },
+              { icon: MapPin, label: "Localização", value: "Cuiabá, MT" },
             ].map((item) => (
               <div
                 key={item.label}

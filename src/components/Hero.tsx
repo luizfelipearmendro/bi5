@@ -63,7 +63,7 @@ const Hero = () => {
         </div>
 
         {/* Stats */}
-        <div
+        {/* <div
           className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mt-20 animate-fade-in-up"
           style={{ animationDelay: "0.4s" }}
         >
@@ -83,7 +83,7 @@ const Hero = () => {
               <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,28 +1,37 @@
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    image: portfolio1,
-    title: "Dashboard de Vendas",
+    title: "Dashboard de Concessionária de Veículos",
     category: "Varejo",
     description:
-      "Painel completo de análise de vendas com KPIs, tendências mensais e segmentação de clientes.",
+      "Dashboard interativo para análise de desempenho comercial, com indicadores de vendas, evolução mensal e segmentação por perfil de cliente.",
+    embedUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiMGZmNjA3ZmMtOWEyNC00ZGFmLWEwYjItMWE5NDgxOWY5YWM0IiwidCI6ImUzMGIwMTUyLTQ4OWMtNDllYS05NGY2LWRiMmNlZDQ0ZDBmZCJ9",
+    link:
+      "https://app.powerbi.com/view?r=eyJrIjoiMGZmNjA3ZmMtOWEyNC00ZGFmLWEwYjItMWE5NDgxOWY5YWM0IiwidCI6ImUzMGIwMTUyLTQ4OWMtNDllYS05NGY2LWRiMmNlZDQ0ZDBmZCJ9",
   },
   {
     image: portfolio2,
-    title: "Controle Financeiro",
-    category: "Finanças",
+    title: "Dashboard para Fornecedora de Brownies",
+    category: "Logística",
     description:
-      "Dashboard financeiro com análise de receitas, despesas, margens de lucro e projeções.",
+      "Painel desenvolvido como demonstração para apoiar o controle financeiro e operacional, reunindo faturamento, perdas produtivas, níveis de estoque e indicadores de eficiência.",
+    embedUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiZDg3YzMxZWItNDk0ZC00ZjJjLWFjMzQtMjllM2U4YWY5Nzg1IiwidCI6ImUzMGIwMTUyLTQ4OWMtNDllYS05NGY2LWRiMmNlZDQ0ZDBmZCJ9",
+    link:
+      "https://app.powerbi.com/view?r=eyJrIjoiZDg3YzMxZWItNDk0ZC00ZjJjLWFjMzQtMjllM2U4YWY5Nzg1IiwidCI6ImUzMGIwMTUyLTQ4OWMtNDllYS05NGY2LWRiMmNlZDQ0ZDBmZCJ9",
   },
   {
     image: portfolio3,
-    title: "Gestão Operacional",
+    title: "Dashboard para faturamento para Óticas",
     category: "Logística",
     description:
-      "Monitoramento de operações em tempo real com mapas, indicadores de estoque e cadeia de suprimentos.",
+      "Dashboard voltado ao acompanhamento de faturamento e desempenho operacional de óticas, com controle de vendas, perdas, estoque e indicadores para apoio à tomada de decisão.",
+    link: "https://app.powerbi.com/view?r=EXEMPLO3",
   },
 ];
 
@@ -41,30 +50,42 @@ const Portfolio = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div
-              key={project.title}
-              className="glass rounded-xl overflow-hidden glow-card group"
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+            <div className="glass rounded-xl overflow-hidden glow-card group">
+              <div className="relative h-96 overflow-hidden bg-muted">
+                <iframe
+                  src={project.embedUrl}
+                  className="w-full h-full border-0"
                   loading="lazy"
+                  allow="fullscreen"
+                  allowFullScreen
                 />
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 left-4 z-10">
                   <span className="rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-primary-foreground">
                     {project.category}
                   </span>
                 </div>
               </div>
+
               <div className="p-6">
-                <h3 className="font-display text-xl font-semibold mb-2 text-foreground">
+                <h3 className="font-display text-xl font-semibold mb-2">
                   {project.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+
+                <p className="text-sm text-muted-foreground">
                   {project.description}
                 </p>
+
+                <div className="mt-4 opacity-20 group-hover:opacity-100 transition-opacity">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+                  >
+                    <ExternalLink size={16} />
+                    Ver dashboard completo
+                  </a>
+                </div>
               </div>
             </div>
           ))}

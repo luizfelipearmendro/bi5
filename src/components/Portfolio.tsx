@@ -31,7 +31,10 @@ const projects = [
     category: "Logística",
     description:
       "Dashboard voltado ao acompanhamento de faturamento e desempenho operacional de óticas, com controle de vendas, perdas, estoque e indicadores para apoio à tomada de decisão.",
-    link: "https://app.powerbi.com/view?r=EXEMPLO3",
+    embedUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiMWVlZDhkNmEtMzYyZi00ZjZiLTk0Y2EtYjEyMWUxMzMxN2IxIiwidCI6ImUzMGIwMTUyLTQ4OWMtNDllYS05NGY2LWRiMmNlZDQ0ZDBmZCJ9",
+    link:
+      "https://app.powerbi.com/view?r=eyJrIjoiMWVlZDhkNmEtMzYyZi00ZjZiLTk0Y2EtYjEyMWUxMzMxN2IxIiwidCI6ImUzMGIwMTUyLTQ4OWMtNDllYS05NGY2LWRiMmNlZDQ0ZDBmZCJ9",
   },
 ];
 

@@ -19,8 +19,8 @@ const Contact = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
             {[
-              { icon: Mail, label: "E-mail", value: "contato@bi5.com.br" },
-              { icon: Phone, label: "Telefone", value: "(11) 99999-0000" },
+              { icon: Mail, label: "E-mail", value: "contato@bi5tech.onmicrosoft.com", display: "contato@bi5" },
+              { icon: Phone, label: "Telefone", value: "+55 65 9910-7988" },
               { icon: MapPin, label: "Localização", value: "Cuiabá, MT" },
             ].map((item) => (
               <div
@@ -31,15 +31,25 @@ const Contact = () => {
                 <p className="text-xs text-muted-foreground mb-1">
                   {item.label}
                 </p>
-                <p className="text-sm font-medium text-foreground">
-                  {item.value}
-                </p>
+
+                {item.label === "E-mail" ? (
+                  <a
+                    href={`mailto:${item.value}`}
+                    className="text-sm font-medium text-foreground hover:underline"
+                  >
+                    {item.display}
+                  </a>
+                ) : (
+                  <p className="text-sm font-medium text-foreground">
+                    {item.value}
+                  </p>
+                )}
               </div>
             ))}
           </div>
 
           <a
-            href="mailto:contato@bi5.com.br"
+            href="https://api.whatsapp.com/send?phone=5565999107988&text=Olá%2C!+Gostaria+de+saber+mais+informações+sobre+os+serviços+do+BI5.&type=phone_number&app_absent=0"
             className="inline-flex rounded-lg bg-primary px-10 py-4 text-base font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
           >
             Enviar Mensagem
